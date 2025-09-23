@@ -1,0 +1,307 @@
+/* ====== PAST CONFERENCES STYLES ====== */
+.past-conferences {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 80px 20px;
+    min-height: 70vh;
+}
+
+.past-conferences .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.past-conferences h2 {
+    font-size: 2.8rem;
+    color: #243658;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.past-conferences h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #BE2633, #243658);
+    border-radius: 2px;
+}
+
+.conference-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.conference-series {
+    margin-bottom: 60px;
+}
+
+.series-title {
+    font-size: 1.8rem;
+    color: #243658;
+    margin-bottom: 30px;
+    font-weight: 700;
+    border-left: 5px solid #BE2633;
+    padding-left: 20px;
+}
+
+.conference-edition {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conference-edition:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.conference-edition.featured {
+    border: 3px solid #BE2633;
+    background: linear-gradient(135deg, rgba(190, 38, 51, 0.02), rgba(255, 255, 255, 1));
+}
+
+.edition-header {
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.edition-header h4 {
+    font-size: 1.5rem;
+    color: #243658;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.edition-badge {
+    background: linear-gradient(135deg, #BE2633, #d63447);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.edition-badge.latest {
+    background: linear-gradient(135deg, #BE2633, #DC2626);
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.edition-badge.success {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.edition-badge.inaugural {
+    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+}
+
+.conference-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.conference-meta span {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status.published {
+    color: #059669;
+    font-weight: 600;
+}
+
+.conference-details p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.conference-summary {
+    background: linear-gradient(135deg, rgba(190, 38, 51, 0.05), rgba(36, 54, 88, 0.05));
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 4px solid #BE2633;
+}
+
+.conference-links {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #BE2633, #d63447);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(190, 38, 51, 0.3);
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(190, 38, 51, 0.4);
+}
+
+.btn-link.secondary {
+    background: linear-gradient(135deg, #243658, #334155);
+    box-shadow: 0 3px 10px rgba(36, 54, 88, 0.3);
+}
+
+.btn-link.tertiary {
+    background: linear-gradient(135deg, #10B981, #059669);
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.conference-highlights h5,
+.research-themes h5 {
+    color: #243658;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.focus-area {
+    background: linear-gradient(135deg, rgba(190, 38, 51, 0.1), rgba(36, 54, 88, 0.1));
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    color: #243658;
+}
+
+.research-themes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.research-themes li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #4a5568;
+}
+
+.research-themes li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #BE2633;
+    font-weight: bold;
+}
+
+.conference-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(34, 197, 94, 0.05));
+    border-radius: 12px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #BE2633;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(190, 38, 51, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(190, 38, 51, 0.8);
+    }
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 767px) {
+    .conference-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .conference-links {
+        flex-direction: column;
+    }
+
+    .btn-link {
+        justify-content: center;
+    }
+
+    .edition-header h4 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .conference-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 479px) {
+    .past-conferences {
+        padding: 60px 15px;
+    }
+
+    .past-conferences h2 {
+        font-size: 2.2rem;
+    }
+
+    .conference-edition {
+        padding: 20px;
+    }
+}

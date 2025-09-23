@@ -1,0 +1,192 @@
+/* ====== ABOUT CONTENT SECTIONS ONLY ====== */
+.about {
+  width: 100vw; /* Full viewport width */
+  max-width: none; /* Remove max-width constraint */
+  margin: 0; /* Remove auto margins */
+  padding: 3rem 4rem 4rem; /* Increase horizontal padding */
+  background: white;
+  /* Slight subtle fade-in animation */
+  animation: fadeInUp 0.6s ease forwards;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* ====== HEADING STYLES ====== */
+.about h2 {
+  font-size: 2.8rem; /* Slightly bigger */
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  /* Gradient text with better fallback */
+  background: linear-gradient(135deg, #BE2633, #243658);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
+  transition: text-shadow 0.3s ease;
+}
+
+.about h2:hover {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #BE2633, #243658);
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out;
+  will-change: width; /* performance optimization */
+}
+
+.about h2:hover::after {
+  width: 100px;
+}
+
+.about h3 {
+  font-size: 2rem; /* Slightly bigger */
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  /* Gradient text with better fallback */
+  background: linear-gradient(135deg, #BE2633, #243658);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
+  transition: text-shadow 0.3s ease;
+}
+
+.about h3:hover {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #BE2633, #243658);
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out;
+  will-change: width; /* performance optimization */
+}
+
+.about h3:hover::after {
+  width: 100px;
+}
+
+/* ====== PARAGRAPHS ====== */
+.about p {
+  margin-bottom: 1.8rem;
+  text-align: justify;
+  color: #444444; /* Improved contrast */
+  font-weight: 400;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  max-width: 90%; /* Prevent text from stretching too wide */
+}
+
+/* ====== LISTS ====== */
+.about ul {
+  list-style-type: disc;
+  margin-left: 2.4rem;
+  margin-bottom: 2rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.about li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* ====== RESPONSIVE DESIGN FOR ABOUT CONTENT ONLY ====== */
+@media (max-width: 1200px) {
+  .about {
+    padding: 3rem 3rem 4rem;
+  }
+  
+  .about p {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    padding: 2rem 2rem 3rem;
+  }
+  
+  .about p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .about h2 {
+    font-size: 2.2rem;
+  }
+
+  .about h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 1rem 0.5rem 2rem;
+  }
+  
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about h3 {
+    font-size: 1.5rem;
+  }
+  
+  .about p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ====== KEYFRAME ANIMATIONS ====== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

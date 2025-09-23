@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f9fafc 0%, #e8ecf4 100%);
+  color: #1e1e1e;
+  line-height: 1.6;
+}
+
+.committee {
+  min-height: 100vh;
+  padding: 80px 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: transparent;
+  color: #1e1e1e;
+}
+
+/* Main heading - centered horizontally and positioned in middle */
+.committee h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #BE2633, #243658);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 3px;
+  position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: block;
+}
+
+.committee h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 160px;
+  height: 6px;
+  background: linear-gradient(135deg, #BE2633, #243658);
+  border-radius: 6px;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(190, 38, 51, 0.4);
+}
+
+.committee-section {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+/* Section headings - also centered */
+.committee h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: block;
+  padding-bottom: 14px;
+  color: #243658;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+}
+
+.committee h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #be2633, #243658);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(190, 38, 51, 0.3);
+  transform: translateX(-50%);
+}
+
+/* Default two-column layout with 300px left margin */
+.committee-grid,
+.committee-list {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: 300px;
+  width: calc(100% - 300px);
+  padding-left: 0;
+  list-style-position: outside;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  column-gap: 40px;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-fill: balance;
+  -webkit-column-fill: balance;
+  -moz-column-fill: balance;
+}
+
+/* Specific override for Technical Programme Committee and Organizing Committee sections */
+.committee-section:has(h3:contains("Technical Programme Committee")) .committee-list,
+.committee-section:has(h3:contains("Organizing Committee")) .committee-list {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}
+
+/* Alternative approach using nth-child if :has() is not supported */
+.committee-section:nth-last-child(2) .committee-list,
+.committee-section:nth-last-child(1) .committee-list {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}
+
+/* Style list items as bullets */
+.committee-member,
+.committee-member-compact {
+  display: list-item;
+  list-style-type: disc;
+  margin: 0 0 12px 0;
+  padding: 8px 0 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #2c2c2c;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: color 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.committee-member-compact {
+  font-size: 0.95rem;
+  padding: 6px 0 6px 16px;
+  margin-bottom: 8px;
+}
+
+/* Remove all hover effects and pseudo-elements */
+.committee-member::before,
+.committee-member::after,
+.committee-member-compact::before,
+.committee-member-compact::after {
+  display: none;
+}
+
+.committee-member:hover,
+.committee-member-compact:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-left-color: transparent;
+  color: #BE2633;
+}
+
+/* Style the bullet marker */
+.committee-member::marker,
+.committee-member-compact::marker {
+  color: #BE2633;
+  font-size: 1.2em;
+}
+
+/* Paragraph styling within list items */
+.committee-member p,
+.committee-member-compact p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  display: inline;
+}
+
+.committee-member-compact p {
+  font-size: inherit;
+}
+
+.committee-member p span,
+.committee-member-compact p span {
+  font-weight: 700;
+  color: #BE2633;
+  display: inline;
+  margin-bottom: 0;
+  margin-right: 8px;
+  font-size: 1.05em;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .committee {
+    padding: 60px 20px;
+    max-width: 100%;
+  }
+  
+  .committee-grid,
+  .committee-list {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    column-gap: 30px;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+  }
+
+  .committee-section:nth-last-child(2) .committee-list,
+  .committee-section:nth-last-child(1) .committee-list {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+  }
+}
+
+@media (max-width: 768px) {
+  .committee {
+    padding: 40px 16px;
+    min-height: 100vh;
+  }
+
+  .committee h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+  }
+  
+  .committee h2::after {
+    width: 120px;
+    height: 5px;
+  }
+
+  .committee h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .committee h3::after {
+    width: 70px;
+    height: 3px;
+  }
+
+  /* Switch to single column on mobile */
+  .committee-grid,
+  .committee-list {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    column-gap: 0;
+    margin-left: 100px;
+    width: calc(100% - 100px);
+  }
+
+  .committee-section:nth-last-child(2) .committee-list,
+  .committee-section:nth-last-child(1) .committee-list {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+
+  .committee-member {
+    padding: 6px 0 6px 14px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .committee-member-compact {
+    padding: 4px 0 4px 14px;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .committee {
+    padding: 30px 12px;
+  }
+  
+  .committee h2 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .committee h3 {
+    font-size: 1.3rem;
+  }
+  
+  .committee-grid,
+  .committee-list {
+    margin-left: 50px;
+    width: calc(100% - 50px);
+  }
+
+  .committee-section:nth-last-child(2) .committee-list,
+  .committee-section:nth-last-child(1) .committee-list {
+    margin-left: 40px;
+    width: calc(100% - 40px);
+  }
+  
+  .committee-member {
+    padding: 4px 0 4px 12px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .committee-member-compact {
+    padding: 3px 0 3px 12px;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+}
+
+/* Ultra-wide screen optimization */
+@media (min-width: 1400px) {
+  .committee {
+    padding: 100px 40px;
+    max-width: 1600px;
+  }
+  
+  .committee-grid,
+  .committee-list {
+    margin-left: 300px;
+    width: calc(100% - 350px);
+    column-gap: 50px;
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+  }
+
+  .committee-section:nth-last-child(2) .committee-list,
+  .committee-section:nth-last-child(1) .committee-list {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+}

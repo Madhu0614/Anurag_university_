@@ -1,0 +1,308 @@
+/* ====== GENERAL BODY STYLES ====== */
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    color: #333;
+    line-height: 1.8;
+}
+
+a {
+    color: #BE2633;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #BE2633, #243658);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: #243658;
+    transform: translateY(-1px);
+}
+
+/* ====== FULL-SCREEN CONTENT SECTION ====== */
+.content {
+    width: 100vw;
+    max-width: none;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+    padding: 60px 40px;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(190, 38, 51, 0.03) 0%, transparent 60%),
+        radial-gradient(circle at 85% 80%, rgba(36, 54, 88, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* ====== ENHANCED TYPOGRAPHY ====== */
+.content h2 {
+    font-size: 2.5em;
+    color: #243658;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #243658, #BE2633);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #BE2633, #243658);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(190, 38, 51, 0.3);
+}
+
+.content h2:hover {
+    transform: translateY(-2px);
+    letter-spacing: 3px;
+}
+
+.content h3 {
+    font-size: 2em;
+    color: #243658;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    letter-spacing: 1px;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #BE2633, #243658);
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.content h3:hover {
+    color: #BE2633;
+    transform: translateY(-2px);
+}
+
+.content h3:hover::after {
+    width: 120px;
+}
+
+/* ====== TRACK SECTIONS WITH ALTERNATING LAYOUT ====== */
+.track-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.track-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.track-content {
+    flex: 1;
+}
+
+.track-image-container {
+    flex: 0 0 400px;
+}
+
+.content h4 {
+    font-size: 1.5em;
+    color: #243658;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: left;
+    position: relative;
+    padding-left: 20px;
+    border-left: 4px solid #BE2633;
+    transition: all 0.3s ease;
+}
+
+.content h4:hover {
+    color: #BE2633;
+}
+
+.content p {
+    font-size: 1.1em;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.content p:hover {
+    color: #2d3748;
+}
+
+/* ====== STATIC IMAGE STYLES (NO HOVER) ====== */
+.theme-image {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+/* ====== STATIC LIST STYLES (NO HOVER) ====== */
+.content ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.content ul li {
+    font-size: 1.1em;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding: 15px 20px 15px 50px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border-left: 4px solid rgba(190, 38, 51, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+.content ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #BE2633;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    .track-section,
+    .track-section.reverse {
+        flex-direction: column;
+    }
+    
+    .track-image-container {
+        flex: none;
+        order: -1;
+    }
+    
+    .content {
+        padding: 40px 20px;
+    }
+    
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content h3 {
+        font-size: 1.8em;
+    }
+
+    .content h4 {
+        font-size: 1.3em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+
+    .content ul li {
+        font-size: 1em;
+    }
+    
+    .theme-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 30px 15px;
+    }
+    
+    .content h2 {
+        font-size: 1.8em;
+    }
+
+    .content h3 {
+        font-size: 1.5em;
+    }
+
+    .content h4 {
+        font-size: 1.1em;
+    }
+
+    .content p {
+        font-size: 0.9em;
+    }
+
+    .content ul li {
+        font-size: 0.9em;
+    }
+}
