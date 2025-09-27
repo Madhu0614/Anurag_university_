@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submission - SEATNGA - 2026</title>
+  <title>Committees - SEATNGA - 2026</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/Submission.css">
+  <link rel="stylesheet" href="css/speakers.css">
 </head>
 <body>
   <!-- Logo Header with Simple Toggle Navigation -->
@@ -21,9 +21,9 @@
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="committees.html">COMMITTEES</a></li>
-          <li><a href="speakers.html">SPEAKERS</a></li>
+          <li><a href="speakers.html" class="active">SPEAKERS</a></li>
           <li><a href="call_for_papers.html">CALL FOR PAPERS</a></li>
-          <li><a href="submission.html" class="active">SUBMISSION</a></li>
+          <li><a href="submission.html">SUBMISSION</a></li>
           <li><a href="dates.html" >IMPORTANT DATES</a></li>
           <li><a href="registration.html">REGISTRATION</a></li>
           <li><a href="past_conferences.html">PAST CONFERENCES</a></li>
@@ -58,136 +58,70 @@
     </div>
   </section>
 
+  <section class="speakers-section">
+    <h2>Keynote Speakers</h2>
 
-  <section class="paper-submission">
-    <div class="container">
-          <h3>Submission</h3>
-    <p>We recommend authors to use the WORD template. It is planned to publish the proceedings with <em>scopus indexed Conferences</em>.</p>
-    <ul>
-      <li><strong>Template:</strong> MS Word</li>
-      <li><strong>Submission Link:</strong> <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2F" target="_blank">Microsoft CMT</a></li>
-    </ul>
-      <h3>Paper Submission & Review Policy</h3>
-      <p>
-        Authors are advised to submit their original and unpublished work (related to the conference theme).
-        The review process takes into account both the quality of writing and the scientific impact of the work.
-        Authors should clearly identify the problem, explain their contribution(s), and justify the state-of-the-art works.
-        The program committee would like to review those who develop, argue, and provide results.
-      </p>
-      <p>
-        Also, note that the (SEATNGA) team takes care of plagiarism (even self-plagiarism) as serious professional misconduct.
-        All papers will be screened for plagiarism, and the (SEATNGA) team will reject them in case there exists significant overlap
-        with the previously published papers/papers.
-      </p>
+    <div class="speaker-card">
+      <img src="images/surender_reddy_salkuti.jpg" alt="Prof. Dr. Surender Reddy Salkuti" class="speaker-photo" />
+      <div class="speaker-name">Prof. Dr. Surender Reddy Salkuti</div>
+      <div class="speaker-title">Department of Railroad and Electrical Engineering, Woosong University, South Korea</div>
+    </div>
 
-            <h3>Review Process</h3>
-      <p>
-        Papers undergo a single-blind review process, by experts drawn from reputed organizations, across the world.
-        Nontrivial, unpublished, and original contributions will only be considered for the conference.
-        The conference will have main papers, presentations, and poster presentations for short papers.
-        All accepted and registered (presented) papers are planned to be published in the proceedings of
-        <strong><em>scopus indexed Conferences</em></strong>.
-      </p>
-
-      <h3>Submission Guidelines</h3>
-
-      <ul>
-
-        <p>Guidelines will be updated soon.</p>
-
-      </ul>
-
-      <h3>Important Note</h3>
-      <p>
-        Regardless of submission types, authors are always advised to submit their original and unpublished work
-        (related to the conference theme).
-      </p>
-
-
+    <div class="speaker-card">
+      <img src="images/obbu_chandra_sekhar.jpg" alt="Dr. Obbu Chandra Sekhar" class="speaker-photo" />
+      <div class="speaker-name">Dr. Obbu Chandra Sekhar</div>
+      <div class="speaker-title">Professor, NIT Delhi, India</div>
     </div>
   </section>
 
-
-  <!-- Logos -->
   <section class="logos">
     <img src="images/logo.png" alt="Anurag University" />
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Anurag University. All Rights Reserved.</p>
   </footer>
 
-  <!-- Enhanced JavaScript for Toggle -->
   <script>
     function toggleNav() {
       const nav = document.getElementById('primary-navigation');
       const toggleBtn = document.querySelector('.nav-toggle');
       const overlay = document.querySelector('.nav-overlay');
       const isOpen = nav.classList.toggle('nav-open');
-      
-      // Update button state
       toggleBtn.classList.toggle('active', isOpen);
       toggleBtn.setAttribute('aria-expanded', isOpen);
       toggleBtn.textContent = isOpen ? '✖' : '☰';
-      
-      // Handle overlay
-      if (overlay) {
-        overlay.classList.toggle('active', isOpen);
-      }
-      
-      // Prevent body scroll when menu is open
+      if (overlay) overlay.classList.toggle('active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-      
-      // Add smooth animation delay for menu items
       if (isOpen) {
-        const menuItems = nav.querySelectorAll('ul li');
-        menuItems.forEach((item, index) => {
-          item.style.transitionDelay = `${0.1 + index * 0.05}s`;
-        });
+          const menuItems = nav.querySelectorAll('ul li');
+          menuItems.forEach((item, index) => {
+              item.style.transitionDelay = `${0.1 + index * 0.05}s`;
+          });
       }
     }
-
     function closeNav() {
       const nav = document.getElementById('primary-navigation');
       const toggleBtn = document.querySelector('.nav-toggle');
       const overlay = document.querySelector('.nav-overlay');
-      
       nav.classList.remove('nav-open');
       toggleBtn.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', false);
       toggleBtn.textContent = '☰';
-      
-      if (overlay) {
-        overlay.classList.remove('active');
-      }
-      
+      if (overlay) overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
-
-    // Enhanced event listeners
     document.addEventListener('DOMContentLoaded', function() {
-      // Close menu on link click (mobile)
       document.querySelectorAll('.header-nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            closeNav();
-          }
+          if (window.innerWidth <= 1024) closeNav();
         });
       });
-      
-      // Close nav on window resize if desktop
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024) {
-          closeNav();
-        }
+        if (window.innerWidth > 1024) closeNav();
       });
-      
-      // Handle escape key
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeNav();
-        }
+        if (e.key === 'Escape') closeNav();
       });
     });
   </script>
