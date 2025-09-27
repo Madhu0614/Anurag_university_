@@ -3,44 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Important Dates - SEATNGA - 2026</title>
+  <title>Submission - SEATNGA - 2026</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/Submission.css">
 </head>
 <body>
-  <!-- Logo Header with Navigation and Conference Title -->
-<section class="logo-header">
-  <div class="logo-container">
-    <img src="images/logo.png" alt="Anurag University Logo" class="header-logo" />
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="committees.html">COMMITTEES</a></li>
-        <li><a href="call_for_papers.html">CALL FOR PAPERS</a></li>
-        <li><a href="dates.html " >IMPORTANT DATES</a></li>
-        <li><a href="submission.html"class="active">SUBMISSION</a></li>
-        <li><a href="registration.html">REGISTRATION</a></li>
-        <li><a href="past_conferences.html">PAST CONFERENCES</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </nav>
-  </div>
-</section>
+  <!-- Logo Header with Simple Toggle Navigation -->
+  <section class="logo-header">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Anurag University Logo" class="header-logo" />
+      <!-- Simple Toggle Button -->
+      <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primary-navigation" onclick="toggleNav()">
+        ☰
+      </button>
 
-<section class="hero">
-  <div class="hero-logo-section">
-    <img src="images/logo_main.png" alt="Hero Logo" class="hero-logo" />
-  </div>
-  <div class="hero-container">
-    <div class="hero-content">
-      <h2>
-        <sup>1st</sup> International Conference on Sustainable Energy and AI-Driven Technologies for Next Generation Applications
-      </h2>
-      <h4><span class="highlight">SEATNGA - 2026</span></h4>
-      <p>November 28-29, Anurag University, Hyderabad, India (<span class="highlight">Hybrid Mode</span>)</p>
+      <nav class="header-nav" id="primary-navigation">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="committees.html">COMMITTEES</a></li>
+          <li><a href="call_for_papers.html">CALL FOR PAPERS</a></li>
+          <li><a href="submission.html" class="active">SUBMISSION</a></li>
+          <li><a href="dates.html" >IMPORTANT DATES</a></li>
+          <li><a href="registration.html">REGISTRATION</a></li>
+          <li><a href="past_conferences.html">PAST CONFERENCES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
+    
+    <!-- Add overlay for mobile menu -->
+    <div class="nav-overlay" onclick="closeNav()">☰</div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/anurag_group_of_institutions_cover.jpg" alt="Hero Background" class="hero-bg" />
+    
+    <div class="hero-overlay"></div>
+    <div class="hero-gradient"></div>
+    
+    <div class="hero-logo-section">
+      <img src="images/logo_main.png" alt="Hero Logo" class="hero-logo" />
+    </div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        <h2>
+          1<sup>st</sup> International Conference on Sustainable Energy and AI Technologies for Next Generation Applications
+        </h2>
+        <h4><span class="highlight">SEATNGA - 2026</span></h4>
+        <p>February 27-28, Anurag University, Hyderabad, India (<span class="highlight">Hybrid Mode</span>)</p>
+      </div>
+    </div>
+  </section>
+
+
   <section class="paper-submission">
     <div class="container">
           <h3>Submission</h3>
@@ -102,13 +119,88 @@
   </section>
 
 
-  <!-- Logos Section -->
+  <!-- Logos -->
   <section class="logos">
     <img src="images/logo.png" alt="Anurag University" />
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Anurag University. All Rights Reserved.</p>
   </footer>
+
+  <!-- Enhanced JavaScript for Toggle -->
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('primary-navigation');
+      const toggleBtn = document.querySelector('.nav-toggle');
+      const overlay = document.querySelector('.nav-overlay');
+      const isOpen = nav.classList.toggle('nav-open');
+      
+      // Update button state
+      toggleBtn.classList.toggle('active', isOpen);
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+      toggleBtn.textContent = isOpen ? '✖' : '☰';
+      
+      // Handle overlay
+      if (overlay) {
+        overlay.classList.toggle('active', isOpen);
+      }
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+      
+      // Add smooth animation delay for menu items
+      if (isOpen) {
+        const menuItems = nav.querySelectorAll('ul li');
+        menuItems.forEach((item, index) => {
+          item.style.transitionDelay = `${0.1 + index * 0.05}s`;
+        });
+      }
+    }
+
+    function closeNav() {
+      const nav = document.getElementById('primary-navigation');
+      const toggleBtn = document.querySelector('.nav-toggle');
+      const overlay = document.querySelector('.nav-overlay');
+      
+      nav.classList.remove('nav-open');
+      toggleBtn.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', false);
+      toggleBtn.textContent = '☰';
+      
+      if (overlay) {
+        overlay.classList.remove('active');
+      }
+      
+      document.body.style.overflow = 'auto';
+    }
+
+    // Enhanced event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close menu on link click (mobile)
+      document.querySelectorAll('.header-nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) {
+            closeNav();
+          }
+        });
+      });
+      
+      // Close nav on window resize if desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+          closeNav();
+        }
+      });
+      
+      // Handle escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeNav();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

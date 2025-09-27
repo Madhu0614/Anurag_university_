@@ -22,8 +22,8 @@
           <li><a href="index.html">HOME</a></li>
           <li><a href="committees.html">COMMITTEES</a></li>
           <li><a href="call_for_papers.html">CALL FOR PAPERS</a></li>
-          <li><a href="dates.html" class="active">IMPORTANT DATES</a></li>
           <li><a href="submission.html">SUBMISSION</a></li>
+          <li><a href="dates.html" class="active">IMPORTANT DATES</a></li>
           <li><a href="registration.html">REGISTRATION</a></li>
           <li><a href="past_conferences.html">PAST CONFERENCES</a></li>
           <li><a href="contact.html">CONTACT</a></li>
@@ -32,14 +32,12 @@
     </div>
     
     <!-- Add overlay for mobile menu -->
-    <div class="nav-overlay" onclick="closeNav()"></div>
+    <div class="nav-overlay" onclick="closeNav()">☰</div>
   </section>
 
   <!-- Hero Section -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="images/Anurag_University_Infrastructure (1) (1).mp4" type="video/mp4" />
-    </video>
+    <img src="images/anurag_group_of_institutions_cover.jpg" alt="Hero Background" class="hero-bg" />
     
     <div class="hero-overlay"></div>
     <div class="hero-gradient"></div>
@@ -122,7 +120,7 @@
       // Update button state
       toggleBtn.classList.toggle('active', isOpen);
       toggleBtn.setAttribute('aria-expanded', isOpen);
-      toggleBtn.textContent = isOpen ? '☰' : '☰';
+      toggleBtn.textContent = isOpen ? '✖' : '☰';
       
       // Handle overlay
       if (overlay) {
@@ -149,7 +147,7 @@
       nav.classList.remove('nav-open');
       toggleBtn.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', false);
-      toggleBtn.textContent = 'Menu';
+      toggleBtn.textContent = '☰';
       
       if (overlay) {
         overlay.classList.remove('active');
